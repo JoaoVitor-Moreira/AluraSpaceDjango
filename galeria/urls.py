@@ -1,9 +1,8 @@
 from django.urls import path
-from galeria.views import index, imagem, buscar, buscar_aleatorio
+from galeria.views import index, imagem, buscar
 
 urlpatterns = [
     path('', index, name='index'),
     path('imagem/<int:foto_id>', imagem, name='imagem'),
-    path('buscar', buscar, name='buscar'),
-    path('surpreendame', buscar_aleatorio, name='surpreendame')
+    path('buscar', buscar, name='buscar')
 ]

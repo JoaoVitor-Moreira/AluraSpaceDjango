@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from galeria.models import Fotografia
-import random
 # Create your views here.
 
 
@@ -21,8 +20,3 @@ def buscar(request):
         if nome_buscar:
             fotografias = fotografias.filter(nome__icontains=nome_buscar)
     return render(request, 'galeria/buscar.html', {'cards': fotografias})
-
-def buscar_aleatorio(request):
-    fotografia = Fotografia.objects.filter(publicada=True)
-    fotografia = random.choice(fotografia)
-    return render(request, 'galeria/surpreendame.html', {'fotografia': fotografia})
